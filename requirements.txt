@@ -1,0 +1,9 @@
+video_stream_opencv
+opencv
+image_view ( ROS PACKAGE )
+
+#-------------------------
+# For PI
+paho-mqtt
+mosquitto-client
+mosquitto
