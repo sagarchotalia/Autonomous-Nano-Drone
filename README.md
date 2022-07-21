@@ -1,10 +1,12 @@
-# Autonomous Nano Drone
-------------
-An open-source, off-the-shelf drone with easily replaceable parts controlled autonomously indoors using a Raspberry Pi Zero as the on-board computer.
+### Steps to install YAMSpy
 
-The point of this project is to make a drone whose parts can be sent individually to someone who wants to make a drone, with any of those parts being replaceable and the drone still working.
+## In RPI:
+1. Install pip3  --> sudo apt-get python3-pip
+		     sudo apt-get update
+		
+2. Install YAMSPy --> sudo python3 setup.py install
 
-We're using two parallel approaches: stabilization using Optical Flow sensors, and WhyCon.
+## Other Dependencies
 
-Optical flow sensors are not very good at stabilizing drones, but through WhyCon we can achieve millimeter precision. Hence, we aim to use both methods and 
-do onboard sensor fusion, for more accurate values.
+1. Install Mosquitto --> sudo apt-get install mosquitto mosquitto-clients
+2. Install mqtt --> pip3 install paho-mqtt

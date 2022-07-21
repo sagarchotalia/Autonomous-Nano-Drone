@@ -1,0 +1,15 @@
+<launch>
+    <include file="$(find video_stream_opencv)/launch/camera.launch">
+         <arg name="video_stream_provider" value="2" /> <!-- 2 is value for the camera for webcam use 0-->
+    </include>
+    <include file="$(find whycon)/launch/whycon.launch"> <!-- Change the argument to 4 for calibration  -->
+    <arg name="targets" default="1"/> 
+    </include>
+    <include file="$(find plotjuggler_ros)/launch/olotjuggler.launch"/>
+    
+    <node pkg="image_view" type="image_view" name="image_view" output="screen">
+    <remap from="image" to="whycon/image_out"/>
+    </include>
+    <node pkg="nano_drone" type="mqtt.py" name="mqtt" output="screen"/>
+    <node pkg="nano_drone" type="pid.py" name="pid" output="screen"/>
+</launch>

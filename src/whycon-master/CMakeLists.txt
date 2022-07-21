@@ -37,7 +37,7 @@ if(NOT DISABLE_ROS)
   add_message_files(
     FILES
     Projection.msg
-    PidTune.msg
+    Coordinates.msg
   )
 
   generate_messages(
