@@ -40,3 +40,6 @@ The Drone is supposed to have an onboard Flight Computer ( RPI Zero 2W ) for com
 
 1. Install Mosquitto --> sudo apt-get install mosquitto mosquitto-clients
 2. Install mqtt --> pip3 install paho-mqtt
+
+## Facing Problems? 
+Notion: https://www.notion.so/2640226478d842368cb303143df706fd?v=b8651a3620444e8395444f0a94484085
