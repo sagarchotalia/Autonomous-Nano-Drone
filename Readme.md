@@ -23,7 +23,7 @@ The Drone is supposed to have an onboard Flight Computer ( RPI Zero 2W ) for com
 5. On Ground Control System:
     `roslaunch nano_drone main.launch`
 6. SSH to RPI using `ssh pi@raspberrypi@local` or `ssh pi@<IP of RPI>`
-7. On Pi, go to `YAMSpy/scripts/` run `GroundControl.py`
+7. On Pi, go to `YAMSpy/scripts/` run `GroundControl.py` "IN FULL SCREEN"
 8. Use `a` to Arm, `d` to Disarm and `q` to Quit
 
 
