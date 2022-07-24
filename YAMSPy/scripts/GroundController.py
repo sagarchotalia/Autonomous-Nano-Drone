@@ -79,9 +79,7 @@ PID_t = [0,0,0]
 PID_r = [0,0,0]
 PID_p = [0,0,0]
 gains = [[0,0,0],[0,0,0],[0,0,0]]
-
-detected = -1
-
+detected = 0
 #
 # On Linux, your serial port will probably be something like
 # /dev/ttyACM0 or /dev/ttyS0 or the same names with numbers different from 0
@@ -380,17 +378,18 @@ def keyboard_controller(screen):
                     screen.clrtoeol()
                     screen.addstr(25, 40, "D_p : {}".format(PID_p[2]))
                     screen.clrtoeol()
-                    if int(detected) == 0:
-                        CMDS['aux1'] = 1000
-                        screen.addstr(14, 0, "DRONE NOT FOUND!!!",curses.A_BOLD + curses.A_BLINK)
-                        screen.clrtoeol()
+
+                    if detected == 0:
+                            CMDS['aux1'] = 1000
+                            screen.addstr(13, 0, "DRONE NOT FOUND!!!" , curses.A_BOLD + curses.A_BLINK)
+                            screen.clrtoeol()
                     else:
-                        screen.addstr(14, 0, "                  ")
-                        screen.clrtoeol()
-                    
+                            screen.addstr(13, 0, "                  ")
+                            screen.clrtoeol()
+
                     screen.addstr(3, 0, cursor_msg)
                     screen.clrtoeol()
-                    
+
 
                 end_time = time.time()
                 last_cycleTime = end_time-start_time
@@ -429,7 +428,7 @@ class Controller():
         error[1] = -(self.setpoints[1] - round(x,1)) # Pitch
         error[2] = -(self.setpoints[2] - round(y,1)) # Roll
         
-        if ARMED and altitude != 0 and int(detected) != 0:
+        if ARMED and altitude != 0 and detected != 0:
         # if True:            
             self.array[0].append(error[0]) # Throttle
             self.array[1].append(error[1]) # Pitch
@@ -441,8 +440,8 @@ class Controller():
             if throttle < 1550 or throttle > 1150:
                 PID_t[1] = sum(self.array[0])*gains[0][1]
             PID_t[2] = gains[0][2]*(error[0]-self.previous_error[0][-1])
-            throttle = sum(PID_t) + 1400
-            # throttle = 1000
+            # throttle = sum(PID_t) + 1450
+            throttle = 1000
 
             # Pich Calculation
             PID_p[0] = gains[1][0] * error[1]
@@ -473,9 +472,9 @@ class Controller():
             elif pitch <= 1450:
                 pitch = 1450
             
-            CMDS['throttle'] = throttle
-            CMDS['pitch'] = pitch
-            CMDS['roll'] = roll_
+            # CMDS['throttle'] = throttle
+            # CMDS['pitch'] = pitch
+            # CMDS['roll'] = roll_
 
             self.previous_error[0].append(error[0])
             self.previous_error[1].append(error[1])
@@ -487,7 +486,6 @@ class Controller():
                 self.previous_error[2].pop(0)
             
         else:
-
             CMDS['throttle'] = 900
             CMDS['roll'] = 1500
             CMDS['pitch'] = 1500
@@ -511,13 +509,13 @@ class MQTT():
         global ALTITUDE, pid, x, y, detected
         val = str(msg.payload)[2:-1].split(',')
         # print(val)
+        detected = int(val[12])
         y = float(val[11])
         x = float(val[10])
         ALTITUDE = float(val[9])
         pid[0] = val[:3]
         pid[2] = val[3:6]
         pid[1] = val[6:9]
-        detected = val[12]
 
     def onConnect(self,client, userdata, flags, rc):
         print("Connected with result code "+str(rc))
@@ -544,3 +542,5 @@ if __name__ == "__main__":
     t1.start()
     t2 = threading.Thread(target=run_curses, args=(keyboard_controller,))
     t2.start()
+
+
