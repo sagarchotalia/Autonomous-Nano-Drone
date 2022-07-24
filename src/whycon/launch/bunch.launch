@@ -1,0 +1,12 @@
+<launch>
+    <include file="$(find video_stream_opencv)/launch/camera.launch">
+         <arg name="video_stream_provider" value="2" />
+    </include>
+    <include file="$(find whycon)/launch/whycon.launch"/>
+    <!-- <include file="$(find image_view)/launch/image_view.launch">
+        <arg name="image" value="whycon/image_out" />
+    </include> -->
+    <node pkg="image_view" type="image_view" name="image_view" args="whycon/image_out" output="screen"/>
+    <node pkg="whycon" type="mqtt.py" name="mqtt" output="screen"/>
+    <node pkg="whycon" type="pid.py" name="pid" output="screen"/>
+</launch>

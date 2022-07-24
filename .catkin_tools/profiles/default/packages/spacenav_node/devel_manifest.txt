@@ -1,0 +1,6 @@
+joystick_drivers/spacenav_node
+/home/wolf/eyantra_ws/devel/.private/spacenav_node/cmake.lock /home/wolf/eyantra_ws/devel/./cmake.lock
+/home/wolf/eyantra_ws/devel/.private/spacenav_node/share/spacenav_node/cmake/spacenav_nodeConfig.cmake /home/wolf/eyantra_ws/devel/share/spacenav_node/cmake/spacenav_nodeConfig.cmake
+/home/wolf/eyantra_ws/devel/.private/spacenav_node/share/spacenav_node/cmake/spacenav_nodeConfig-version.cmake /home/wolf/eyantra_ws/devel/share/spacenav_node/cmake/spacenav_nodeConfig-version.cmake
+/home/wolf/eyantra_ws/devel/.private/spacenav_node/lib/pkgconfig/spacenav_node.pc /home/wolf/eyantra_ws/devel/lib/pkgconfig/spacenav_node.pc
+/home/wolf/eyantra_ws/devel/.private/spacenav_node/lib/spacenav_node/spacenav_node /home/wolf/eyantra_ws/devel/lib/spacenav_node/spacenav_node

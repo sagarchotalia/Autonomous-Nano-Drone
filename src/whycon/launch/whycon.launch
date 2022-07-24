@@ -1,0 +1,25 @@
+<launch>
+  <arg name="name" default="whycon"/>
+  <arg name="targets" default="1"/>
+  <arg name="outer_diameter" default="0.061"/>
+  <arg name="inner_diameter" default="0.025"/>
+  <arg name="max_attempts" default="10"/>
+  <arg name="max_refine" default="3"/>
+
+  <group ns="camera">
+    <node pkg="image_proc" type="image_proc" name="image_proc"/>
+  </group>
+
+  <node name="whycon" type="whycon" pkg="whycon" output="screen">
+    <param name="targets" value="$(arg targets)"/>
+    <param name="name" value="$(arg name)"/>
+    <param name="outer_diameter" value="$(arg outer_diameter)"/>
+    <param name="inner_diameter" value="$(arg inner_diameter)"/>
+    <param name="max_attempts" value="$(arg max_attempts)"/>
+    <param name="max_refine" value="$(arg max_refine)"/>
+    
+  </node>
+
+  <node name="transformer" type="transformer" pkg="whycon" output="screen"/>
+</launch>
+  

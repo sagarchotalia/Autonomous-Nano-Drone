@@ -1,0 +1,5 @@
+camera
+/home/wolf/eyantra_ws/devel/.private/camera/cmake.lock /home/wolf/eyantra_ws/devel/./cmake.lock
+/home/wolf/eyantra_ws/devel/.private/camera/share/camera/cmake/cameraConfig-version.cmake /home/wolf/eyantra_ws/devel/share/camera/cmake/cameraConfig-version.cmake
+/home/wolf/eyantra_ws/devel/.private/camera/share/camera/cmake/cameraConfig.cmake /home/wolf/eyantra_ws/devel/share/camera/cmake/cameraConfig.cmake
+/home/wolf/eyantra_ws/devel/.private/camera/lib/pkgconfig/camera.pc /home/wolf/eyantra_ws/devel/lib/pkgconfig/camera.pc

@@ -1,0 +1,8 @@
+charlie12
+/home/wolf/eyantra_ws/devel/.private/charlie12/cmake.lock /home/wolf/eyantra_ws/devel/./cmake.lock
+/home/wolf/eyantra_ws/devel/.private/charlie12/share/charlie12/cmake/charlie12Config-version.cmake /home/wolf/eyantra_ws/devel/share/charlie12/cmake/charlie12Config-version.cmake
+/home/wolf/eyantra_ws/devel/.private/charlie12/share/charlie12/cmake/charlie12Config.cmake /home/wolf/eyantra_ws/devel/share/charlie12/cmake/charlie12Config.cmake
+/home/wolf/eyantra_ws/devel/.private/charlie12/lib/libgazebo_motor_model.so /home/wolf/eyantra_ws/devel/lib/libgazebo_motor_model.so
+/home/wolf/eyantra_ws/devel/.private/charlie12/lib/libmav_msgs.so /home/wolf/eyantra_ws/devel/lib/libmav_msgs.so
+/home/wolf/eyantra_ws/devel/.private/charlie12/lib/libgazebo_rotor_plugin.so /home/wolf/eyantra_ws/devel/lib/libgazebo_rotor_plugin.so
+/home/wolf/eyantra_ws/devel/.private/charlie12/lib/pkgconfig/charlie12.pc /home/wolf/eyantra_ws/devel/lib/pkgconfig/charlie12.pc

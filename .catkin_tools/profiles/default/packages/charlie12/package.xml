@@ -1,0 +1,47 @@
+<package format="2">
+  <name>charlie12</name>
+  <version>1.0.0</version>
+  <description>
+    <p>URDF Description package for charlie12</p>
+    <p>This package contains configuration data, 3D models and launch files
+for charlie12 robot</p>
+  </description>
+  <author>TODO</author>
+  <maintainer email="TODO@email.com" />
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roslaunch</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend >gazebo_plugins</depend>
+  <!-- <build_export_depend>gazebo_plugins</build_export_depend>
+  <exec_depend>gazebo_plugins</exec_depend> -->
+  <depend >roscpp</depend>
+  <depend >gazebo_ros</depend>
+  <depend>gazebo</depend>
+  <depend>mav_msgs</depend>
+  <depend>rotors_gazebo_plugins</depend>
+    <depend>cmake_modules</depend>
+  <depend>cv_bridge</depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>libgoogle-glog-dev</depend>
+  <depend>protobuf-dev</depend>
+  <depend>mavros</depend>
+
+  <depend>octomap_msgs</depend>
+  <depend>octomap_ros</depend>
+  <depend>octomap</depend>
+  <depend>rosbag</depend>
+
+  <depend>rotors_comm</depend>
+  <depend>rotors_control</depend>
+  <depend>std_srvs</depend>
+  <depend>tf</depend>
+  <depend>yaml-cpp</depend>
+  <export>
+    <architecture_independent />
+  <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
+  </export>
+</package>
